@@ -2,6 +2,11 @@
 
 namespace Juratitov\Picmonkey;
 
+/**
+ * Class Picmonkey
+ * 
+ * @link http://www.picmonkey.com/help/articles/1017782-api-documentation PicMonkey API Documentation
+ */
 class Picmonkey
 {
 
