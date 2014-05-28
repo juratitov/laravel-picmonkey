@@ -2,6 +2,8 @@
 
 namespace Juratitov\Picmonkey;
 
+use \Config;
+
 /**
  * Class Picmonkey
  * 
@@ -11,36 +13,16 @@ class Picmonkey
 {
 
     /**
-     * Inject dependencies
-     * @param array $config The config data array
-     * @return void
-     */
-    private $config;
-
-    public function __construct($config)
-    {
-        $this->config = $config;
-    }
-
-    /**
      * 
      * @return boolean
      */
-    public function getLoadingUrl($importUrl, $imageId, $exportUrl = null, $redirectUrl = null, $closeTarget = null)
+    public static function getLoadingUrl($importUrl, $imageId)
     {
-        $this->config['_import'] = $importUrl;
-        $this->config['_imageid'] = $imageId;
-        if ($exportUrl) {
-            $this->config['_export'] = $exportUrl;
-        }
-        if ($redirectUrl) {
-            $this->config['_redirect'] = $redirectUrl;
-        }
-        if ($closeTarget) {
-            $this->config['_close_target'] = $closeTarget;
-        }
+        $query['_keyapi'] = Config::get('picmonkey::config._apikey');
+        $query['_import'] = $importUrl;
+        $query['_imageid'] = $imageId;
 
-        return $this->config['_base_url'] . '?' . http_build_query($this->config);
+        return Config::get('picmonkey::config._base_url') . '?' . http_build_query($query);
     }
 
 }

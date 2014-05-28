@@ -21,11 +21,17 @@ class PicmonkeyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind a new singleton instance of PicMonkey to the app
-		$this->app->singleton('picmonkey', function() {			
-			// Inject dependencies
-			return new Picmonkey(\Config::get('picmonkey::config'));
-		});	
+        $this->app['picmonkey'] = $this->app->share(function($app) {
+            return new Picmonkey;
+        });
+        /**
+          // Bind a new singleton instance of PicMonkey to the app
+          $this->app->singleton('picmonkey', function() {
+          // Inject dependencies
+          return new Picmonkey(\Config::get('picmonkey::config'));
+          });
+         * 
+         */
     }
 
     /**
