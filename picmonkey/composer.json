@@ -1,0 +1,20 @@
+{
+    "name": "juratitov/picmonkey",
+    "description": "",
+    "authors": [
+        {
+            "name": "Jura Titov",
+            "email": "juratitov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Juratitov\\Picmonkey": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
