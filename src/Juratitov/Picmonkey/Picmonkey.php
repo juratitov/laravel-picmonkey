@@ -21,9 +21,21 @@ class Picmonkey
      * 
      * @return boolean
      */
-    public static function getLoadingUrl()
+    public function getLoadingUrl($importUrl, $imageId, $exportUrl = null, $redirectUrl = null, $closeTarget = null)
     {
-        return 'http://www.picmonkey.com/service ?_apikey=00112233445566778899aabbccddeeff &_import=http%3A%2F%2Ffarm8.staticflickr.com%2F7129%2F7113442667_efa2b2181a_b_d.jpg';
+        $this->config['_import'] = $importUrl;
+        $this->config['_imageid'] = $imageId;
+        if ($exportUrl) {
+            $this->config['_export'] = $exportUrl;
+        }
+        if ($redirectUrl) {
+            $this->config['_redirect'] = $redirectUrl;
+        }
+        if ($closeTarget) {
+            $this->config['_close_target'] = $closeTarget;
+        }
+
+        return $this->config['_base_url'] . '?' . http_build_query($this->config);
     }
 
 }
