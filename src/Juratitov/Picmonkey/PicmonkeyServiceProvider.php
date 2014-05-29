@@ -24,11 +24,6 @@ class PicmonkeyServiceProvider extends ServiceProvider
         \App::singleton('picmonkey', function() {
             return new Picmonkey;
         });
-        /* $this->app['picmonkey'] = $this->app->share(function($app) {
-          return new Picmonkey;
-          });
-         * 
-         */
     }
 
     /**

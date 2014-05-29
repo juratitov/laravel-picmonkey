@@ -39,6 +39,7 @@ class Picmonkey
         $query['_export_field'] = Config::get('picmonkey::config._export_field');
         $query['_export_method'] = Config::get('picmonkey::config._export_method');
         $query['_replace'] = Config::get('picmonkey::config._replace');
+        $query['_out_format'] = Config::get('picmonkey::config._out_format');
         $query['_close_target'] = Config::get('picmonkey::config._close_target');
         $query['_redirect'] = Config::get('picmonkey::config._redirect');
 
