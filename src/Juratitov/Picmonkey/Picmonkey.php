@@ -33,7 +33,8 @@ class Picmonkey
     {
         $query['_keyapi'] = Config::get('picmonkey::config._apikey');
         $query['_import'] = $importUrl;
-        $query['_imageid'] = $imageId;        
+        $query['_imageid'] = $imageId;
+        $query['_export'] = Config::get('picmonkey::config._export');
         $query['_export_agent'] = Config::get('picmonkey::config._export_agent');
         $query['_export_field'] = Config::get('picmonkey::config._export_field');
         $query['_export_method'] = Config::get('picmonkey::config._export_method');
